@@ -97,7 +97,7 @@ app.get("/secrets", async (req, res) => {
       } else {
         res.render("secrets.ejs", {
           secret:
-            "You have no secrets submitted. Come on, we won't judge (much) 😉",
+            "You haven’t shared any secrets yet. Come on, we won’t judge you (much) 😉",
         });
       }
     } catch (err) {
@@ -227,7 +227,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/secrets",
+      callbackURL: "https://webdev-9g47.onrender.com",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     async (accessToken, refreshToken, profile, cb) => {
